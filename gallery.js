@@ -83,4 +83,8 @@ const galleryItems = images.map(image => {
 });
 
 gallery.innerHTML
- = galleryItems.join('');
+    = galleryItems.join('');
+ 
+gallery.addEventListener('click', event => {
+    event.preventDefault();
+    });
