@@ -84,14 +84,3 @@ const galleryItems = images.map(image => {
 
 gallery.innerHTML
  = galleryItems.join('');
-
-// <li class="gallery-item">
-//   <a class="gallery-link" href="large-image.jpg">
-//     <img
-//       class="gallery-image"
-//       src="small-image.jpg"
-//       data-source="large-image.jpg"
-//       alt="Image description"
-//     />
-//   </a>
-// </li>
