@@ -98,5 +98,29 @@ gallery.addEventListener("click", (event) => {
   if (link) {
     const largeImageLink = link.href;
     console.log(largeImageLink);
+    basicLightbox
+      .create(
+        `
+            <img width="1400" height="900" src="${largeImageLink}">
+        `
+      )
+      .show();
   }
 });
+
+// gallery.addEventListener("click", (event) => {
+//   event.preventDefault();
+
+//   const link = event.target.closest("a"); // Szukamy najbliższego elementu <a>
+//   if (link) {
+//     const largeImageLink = link.href;
+//     // Otwórz okno modalne z basicLightbox
+//     basicLightbox
+//       .create(
+//         `
+//             <img width="1400" height="900" src="${largeImageLink}">
+//         `
+//       )
+//       .show();
+//   }
+// });
