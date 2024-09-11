@@ -98,6 +98,6 @@ gallery.addEventListener("click", (event) => {
   if (link) {
     // Sprawdzamy, czy znaleźliśmy link <a>
     const largeImageLink = link.href; // Pobieramy href z linku <a>
-    console.log("Kliknięto link do dużego obrazu:", largeImageLink);
+    console.log(largeImageLink);
   }
 });
