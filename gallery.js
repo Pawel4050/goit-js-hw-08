@@ -88,16 +88,15 @@ gallery.innerHTML = galleryItems.join("");
 //     if (event.target.tagName === 'A') {
 //         const link = event.target;
 //         const largeImageLink = link.href;
-//         console.log('Kliknięto link do dużego obrazu:', largeImageLink);
+//         console.log(largeImageLink);
 //         }
 //     });
 
 gallery.addEventListener("click", (event) => {
-  event.preventDefault(); // Zapobiega domyślnemu działaniu wszystkich kliknięć
-  const link = event.target.closest("a"); // Szukamy najbliższego elementu <a>
+  event.preventDefault();
+  const link = event.target.closest("a");
   if (link) {
-    // Sprawdzamy, czy znaleźliśmy link <a>
-    const largeImageLink = link.href; // Pobieramy href z linku <a>
+    const largeImageLink = link.href;
     console.log(largeImageLink);
   }
 });
