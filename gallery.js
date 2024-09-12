@@ -89,12 +89,20 @@ gallery.addEventListener("click", (event) => {
   if (link) {
     const largeImageLink = link.href;
     console.log(largeImageLink);
-    basicLightbox
-      .create(
-        `
-            <img width="1400" height="900" src="${largeImageLink}">
-        `
-      )
-      .show();
+
+    const instance = basicLightbox.create(
+      `
+        <img width="1400" height="900" src="${largeImageLink}">
+      `
+    );
+
+    instance.show();
+    // basicLightbox
+    //   .create(
+    //     `
+    //         <img width="1400" height="900" src="${largeImageLink}">
+    //     `
+    //   )
+    //   .show();
   }
 });
