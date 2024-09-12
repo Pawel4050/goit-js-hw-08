@@ -83,26 +83,64 @@ const galleryItems = images.map((image) => {
 
 gallery.innerHTML = galleryItems.join("");
 
+// gallery.addEventListener("click", (event) => {
+//   event.preventDefault();
+//   const link = event.target.closest("a");
+//   if (link) {
+//     const largeImageLink = link.href;
+//     console.log(largeImageLink);
+
+//     const instance = basicLightbox.create(
+//       `
+//         <img width="1400" height="900" src="${largeImageLink}">
+//       `
+//     );
+
+//     instance.show();
+//     // basicLightbox
+//     //   .create(
+//     //     `
+//     //         <img width="1400" height="900" src="${largeImageLink}">
+//     //     `
+//     //   )
+//     //   .show();
+//   }
+// });
+
+// Funkcja do obsługi zamykania okna modalnego za pomocą klawisza Escape
+function onKeyDown(event) {
+  if (event.key === "Escape" && instance) {
+    instance.close();
+  }
+}
+
+// Zmienna do przechowywania referencji do instancji okna modalnego
+let instance = null;
+
 gallery.addEventListener("click", (event) => {
   event.preventDefault();
   const link = event.target.closest("a");
   if (link) {
     const largeImageLink = link.href;
-    console.log(largeImageLink);
 
-    const instance = basicLightbox.create(
+    // Utworzenie instancji okna modalnego
+    instance = basicLightbox.create(
       `
         <img width="1400" height="900" src="${largeImageLink}">
-      `
+      `,
+      {
+        onShow: () => {
+          // Dodanie nasłuchiwania zdarzenia po otwarciu okna modalnego
+          window.addEventListener("keydown", onKeyDown);
+        },
+        onClose: () => {
+          // Usunięcie nasłuchiwania zdarzenia po zamknięciu okna modalnego
+          window.removeEventListener("keydown", onKeyDown);
+        },
+      }
     );
 
+    // Wyświetlenie okna modalnego
     instance.show();
-    // basicLightbox
-    //   .create(
-    //     `
-    //         <img width="1400" height="900" src="${largeImageLink}">
-    //     `
-    //   )
-    //   .show();
   }
 });
