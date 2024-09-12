@@ -89,7 +89,7 @@ function onKeyDown(event) {
   }
 }
 
-// let instance = null;
+// let instance = null; ??
 
 gallery.addEventListener("click", (event) => {
   event.preventDefault();
