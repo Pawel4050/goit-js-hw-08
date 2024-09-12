@@ -83,15 +83,6 @@ const galleryItems = images.map((image) => {
 
 gallery.innerHTML = galleryItems.join("");
 
-// gallery.addEventListener('click', (event) => {
-//     event.preventDefault();
-//     if (event.target.tagName === 'A') {
-//         const link = event.target;
-//         const largeImageLink = link.href;
-//         console.log(largeImageLink);
-//         }
-//     });
-
 gallery.addEventListener("click", (event) => {
   event.preventDefault();
   const link = event.target.closest("a");
@@ -107,20 +98,3 @@ gallery.addEventListener("click", (event) => {
       .show();
   }
 });
-
-// gallery.addEventListener("click", (event) => {
-//   event.preventDefault();
-
-//   const link = event.target.closest("a"); // Szukamy najbliższego elementu <a>
-//   if (link) {
-//     const largeImageLink = link.href;
-//     // Otwórz okno modalne z basicLightbox
-//     basicLightbox
-//       .create(
-//         `
-//             <img width="1400" height="900" src="${largeImageLink}">
-//         `
-//       )
-//       .show();
-//   }
-// });
